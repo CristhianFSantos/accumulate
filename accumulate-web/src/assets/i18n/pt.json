@@ -1,1 +1,13 @@
-{}
+{
+  "menu": {
+    "msg001": "Painel",
+    "msg002": "Despesas",
+    "msg003": "Despesas fixas",
+    "msg004": "Despesas variáveis",
+    "msg005": "Configurações",
+    "msg006": "Meu Perfil"
+  },
+  "label": {
+    "msg001": "Sair"
+  }
+}

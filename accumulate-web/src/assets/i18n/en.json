@@ -1,1 +1,13 @@
-{}
+{
+  "menu": {
+    "msg001": "Dashboard",
+    "msg002": "Expenses",
+    "msg003": "Fixed expenses",
+    "msg004": "Variable expenses",
+    "msg005": "Settings",
+    "msg006": "My Profile"
+  },
+  "label": {
+    "msg001": "Logout"
+  }
+}

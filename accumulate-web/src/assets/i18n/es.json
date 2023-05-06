@@ -1,1 +1,13 @@
-{}
+{
+  "menu": {
+    "msg001": "Panel",
+    "msg002": "Gastos",
+    "msg003": "Gastos fijos",
+    "msg004": "Gastos variables",
+    "msg005": "Ajustes",
+    "msg006": "Mi perfil"
+  },
+  "label": {
+    "msg001": "Cerrar sesión"
+  }
+}

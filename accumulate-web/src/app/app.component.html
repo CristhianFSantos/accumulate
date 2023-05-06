@@ -1,47 +1,62 @@
 <nz-layout class="app-layout">
+  <!-- Sider bar config -->
   <nz-sider
     class="menu-sidebar"
     nzCollapsible
-    nzWidth="256px"
+    nzWidth="250px"
     nzBreakpoint="md"
     [(nzCollapsed)]="isCollapsed"
     [nzTrigger]="null"
   >
+    <!-- Logo and name -->
     <div class="sidebar-logo">
-      <a href="https://ng.ant.design/" target="_blank">
+      <a routerLink="/dashboard" target="_self">
         <img src="assets/images/accumulate-logo.svg" alt="logo" />
-        <h1>Ant Design Of Angular</h1>
+        <h1>Accumulate</h1>
       </a>
     </div>
+
+    <!-- Menu -->
     <ul
       nz-menu
       nzTheme="dark"
       nzMode="inline"
       [nzInlineCollapsed]="isCollapsed"
     >
-      <li nz-submenu nzOpen nzTitle="Dashboard" nzIcon="dashboard">
+      <li nz-menu-item nzMatchRouter>
+        <a routerLink="/dashboard">
+          <span nz-icon nzType="dashboard" nzTheme="outline"></span>
+          <span>{{ "menu.msg001" | transloco }}</span>
+        </a>
+      </li>
+      <li
+        nz-submenu
+        nzTitle="{{ 'menu.msg002' | transloco }}"
+        nzIcon="pie-chart"
+      >
         <ul>
           <li nz-menu-item nzMatchRouter>
-            <a routerLink="/welcome">Welcome</a>
+            <a routerLink="/fixed-expenses">{{ "menu.msg003" | transloco }}</a>
           </li>
           <li nz-menu-item nzMatchRouter>
-            <a>Monitor</a>
-          </li>
-          <li nz-menu-item nzMatchRouter>
-            <a>Workplace</a>
+            <a routerLink="/variable-expenses">{{
+              "menu.msg004" | transloco
+            }}</a>
           </li>
         </ul>
       </li>
-      <li nz-submenu nzOpen nzTitle="Form" nzIcon="form">
+
+      <li nz-submenu nzTitle="{{ 'menu.msg005' | transloco }}" nzIcon="setting">
         <ul>
           <li nz-menu-item nzMatchRouter>
-            <a>Basic Form</a>
+            <a routerLink="/my-profile">{{ "menu.msg006" | transloco }}</a>
           </li>
         </ul>
       </li>
     </ul>
   </nz-sider>
   <nz-layout>
+    <!-- Tool Bar -->
     <nz-header>
       <div class="app-header">
         <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
@@ -51,6 +66,24 @@
             [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
           ></span>
         </span>
+        <div class="header-tools">
+          <button
+            [nzTooltipTitle]="'label.msg001' | transloco"
+            nz-tooltip
+            nzTooltipPlacement="bottom"
+            nz-button
+            nzType="default"
+            nzDanger
+          >
+            <span
+              class="tools-icon"
+              nz-icon
+              nzType="export"
+              nzTheme="outline"
+            ></span>
+          </button>
+          <acc-change-language />
+        </div>
       </div>
     </nz-header>
     <nz-content>
