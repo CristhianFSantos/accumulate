@@ -10,7 +10,7 @@
   >
     <!-- Logo and name -->
     <div class="sidebar-logo">
-      <a routerLink="/dashboard" target="_self">
+      <a routerLink="/accumulate/accumulate/dashboard" target="_self">
         <img src="assets/images/accumulate-logo.svg" alt="logo" />
         <h1>Accumulate</h1>
       </a>
@@ -24,7 +24,7 @@
       [nzInlineCollapsed]="isCollapsed"
     >
       <li nz-menu-item nzMatchRouter>
-        <a routerLink="/dashboard">
+        <a routerLink="/accumulate/dashboard">
           <span nz-icon nzType="dashboard" nzTheme="outline"></span>
           <span>{{ "menu.msg001" | transloco }}</span>
         </a>
@@ -36,10 +36,12 @@
       >
         <ul>
           <li nz-menu-item nzMatchRouter>
-            <a routerLink="/fixed-expenses">{{ "menu.msg003" | transloco }}</a>
+            <a routerLink="/accumulate/fixed-expenses">{{
+              "menu.msg003" | transloco
+            }}</a>
           </li>
           <li nz-menu-item nzMatchRouter>
-            <a routerLink="/variable-expenses">{{
+            <a routerLink="/accumulate/variable-expenses">{{
               "menu.msg004" | transloco
             }}</a>
           </li>
@@ -49,7 +51,9 @@
       <li nz-submenu nzTitle="{{ 'menu.msg005' | transloco }}" nzIcon="setting">
         <ul>
           <li nz-menu-item nzMatchRouter>
-            <a routerLink="/my-profile">{{ "menu.msg006" | transloco }}</a>
+            <a routerLink="/accumulate/my-profile">{{
+              "menu.msg006" | transloco
+            }}</a>
           </li>
         </ul>
       </li>
@@ -68,6 +72,7 @@
         </span>
         <div class="header-tools">
           <button
+            (click)="logout()"
             [nzTooltipTitle]="'label.msg001' | transloco"
             nz-tooltip
             nzTooltipPlacement="bottom"

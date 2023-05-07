@@ -1,0 +1,90 @@
+@import "src/scss/variables.scss";
+@import "src/scss/mixins.scss";
+:host {
+  display: flex;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  .app-layout {
+    height: 100vh;
+
+    .menu-sidebar {
+      position: relative;
+      z-index: 10;
+      min-height: 100vh;
+      box-shadow: 2px 0 6px #00152959;
+
+      .sidebar-logo {
+        position: relative;
+        height: 64px;
+        padding-left: 24px;
+        overflow: hidden;
+        line-height: 64px;
+        background: #001529;
+        transition: all 0.3s;
+
+        img {
+          display: inline-block;
+          height: 55px;
+          width: 55px;
+          vertical-align: middle;
+        }
+
+        h1 {
+          display: inline-block;
+          margin: 0 0 0 10px;
+          color: $background-color;
+          font-weight: 600;
+          font-size: 0.9rem;
+          font-family: Avenir, Helvetica Neue, Arial, Helvetica, sans-serif;
+          vertical-align: middle;
+        }
+      }
+    }
+
+    nz-header {
+      padding: 0;
+      width: 100%;
+      z-index: 2;
+
+      .app-header {
+        height: 64px;
+        padding: 10px 10px 10px 15px;
+        background: $background-color;
+        box-shadow: 0 1px 4px #00152914;
+        @include flex-center();
+        justify-content: space-between;
+
+        .header-trigger {
+          font-size: 20px;
+          cursor: pointer;
+          transition: all 0.3s, padding 0s;
+
+          .trigger:hover {
+            color: $primary-color;
+          }
+        }
+        .header-tools {
+          @include flex-center();
+          gap: 10px;
+
+          .tools-icon {
+            font-size: 15px;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    nz-content {
+      margin: 24px 0 0;
+
+      .inner-content {
+        padding: 24px;
+        background: $background-color;
+        height: 100%;
+      }
+    }
+  }
+}
